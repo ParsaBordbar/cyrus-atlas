@@ -2,10 +2,13 @@
 
 An interactive atlas of the reign of Cyrus the Great (c. 600–530 BCE), drawn in the style of a hand-coloured 19th-century engraved map. Step through his life on the scale bar and the satrapies fill with watercolour as they come under his rule; the camera flies to where each event took place. English and Persian (RTL).
 
+Live: https://parsabordbar.github.io/cyrus-atlas/
+
 ```sh
 npm install
 npm run dev      # http://localhost:5173
 npm run build
+GITHUB_PAGES=true npm run build   # build for the /cyrus-atlas/ subpath, as CI does
 npm run geo      # rebuild src/data/*.geojson (needs Natural Earth files in .cache/)
 ```
 

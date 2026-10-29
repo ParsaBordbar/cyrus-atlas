@@ -63,4 +63,4 @@ export const pictures: Record<PictureId, Picture> = {
   },
 }
 
-export const pictureSrc = (id: PictureId, thumb = false) => `/relics/${id}${thumb ? '-thumb' : ''}.webp`
+export const pictureSrc = (id: PictureId, thumb = false) => `${import.meta.env.BASE_URL}relics/${id}${thumb ? '-thumb' : ''}.webp`
