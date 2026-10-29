@@ -1,0 +1,20 @@
+@theme {
+  --color-paper: #ecdfbf;
+  --color-paper-light: #f3e9cf;
+  --color-sea: #ded5b8;
+  --color-ink: #3b2b1c;
+  --color-ink-soft: #6e5a43;
+  --color-rubric: #a5361f;
+  --color-foxing: #c4a676;
+  --color-gold: #9c6b1e;
+
+  --font-engraved: 'IM Fell English', 'Iowan Old Style', Georgia, serif;
+  --font-engraved-sc: 'IM Fell English SC', 'IM Fell English', Georgia, serif;
+  --font-naskh: 'Amiri', 'Noto Naskh Arabic', serif;
+}
+
+:root {
+  --frame: 10px;
+  --neatline: 7px;
+  --ease-ink: cubic-bezier(0.22, 0.8, 0.3, 1);
+}
