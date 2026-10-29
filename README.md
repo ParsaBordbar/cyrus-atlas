@@ -1,3 +1,6 @@
+<img width="2560" height="1445" alt="telegram-cloud-photo-size-4-5987822282446934263-w" src="https://github.com/user-attachments/assets/1c82f95e-0448-4e66-bfff-77ae0f020cb1" />
+
+
 # Cyrus Atlas
 
 An interactive atlas of the reign of Cyrus the Great (c. 600–530 BCE), drawn in the style of a hand-coloured 19th-century engraved map. Step through his life on the scale bar and the satrapies fill with watercolour as they come under his rule; the camera flies to where each event took place. English and Persian (RTL).
