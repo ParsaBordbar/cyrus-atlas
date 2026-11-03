@@ -1,0 +1,228 @@
+.history-page {
+  min-height: 100vh;
+  padding: 120px 24px;
+  background: var(--color-paper, #ecdfbf);
+  color: var(--color-ink, #3b2b1c);
+  font-family: var(--font-engraved, Georgia, serif);
+}
+
+.history-container {
+  max-width: 83%;
+  margin: 0 auto;
+}
+
+/* Header */
+
+.history-header {
+  max-width: 760px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.history-eyebrow {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--color-rubric, #a5361f);
+  font-family: var(--font-engraved-sc, Georgia, serif);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+}
+
+.history-title {
+  margin: 0;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-ink, #3b2b1c);
+}
+
+.history-description {
+  max-width: 570px;
+  margin: 20px auto 0;
+  color: var(--color-ink-soft, #6e5a43);
+  font-family: var(--font-naskh, serif);
+  font-size: 17px;
+  line-height: 2;
+}
+
+.history-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 32px;
+}
+
+.history-divider span:not(.history-divider-symbol) {
+  width: 65px;
+  height: 1px;
+  background: var(--color-foxing, #c4a676);
+}
+
+.history-divider-symbol {
+  color: var(--color-rubric, #a5361f);
+  font-size: 18px;
+}
+
+/* Grid */
+
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 320px));
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Card */
+
+.history-card {
+  display: block;
+  padding: var(--frame, 10px);
+  color: inherit;
+  text-decoration: none;
+  background: var(--color-foxing, #c4a676);
+  border: 1px solid var(--color-gold, #9c6b1e);
+  transition:
+    transform 0.35s var(--ease-ink, ease),
+    box-shadow 0.35s ease;
+}
+
+.history-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 16px 35px rgb(59 43 28 / 13%);
+}
+
+.history-card-frame {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 340px;
+  padding: 24px;
+  border: var(--neatline, 7px) double var(--color-gold, #9c6b1e);
+  background:
+    radial-gradient(
+      ellipse at 50% 50%,
+      transparent 40%,
+      rgb(156 107 30 / 7%) 100%
+    ),
+    var(--color-paper-light, #f3e9cf);
+}
+
+/* Top */
+
+.history-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.history-card-number {
+  color: var(--color-rubric, #a5361f);
+  font-family: var(--font-engraved-sc, Georgia, serif);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+}
+
+.history-card-category {
+  padding: 6px 12px;
+  color: var(--color-rubric, #a5361f);
+  border: 1px solid var(--color-rubric, #a5361f);
+  font-family: var(--font-naskh, serif);
+  font-size: 12px;
+}
+
+/* Content */
+
+.history-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 35px 0;
+}
+
+.history-card-overline {
+  margin-bottom: 15px;
+  color: var(--color-gold, #9c6b1e);
+  font-family: var(--font-engraved-sc, Georgia, serif);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+}
+
+.history-card-title {
+  margin: 0;
+  color: var(--color-ink, #3b2b1c);
+  font-family: var(--font-engraved, Georgia, serif);
+  font-size: clamp(30px, 4vw, 38px);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.history-card-subtitle {
+  margin: 16px 0 0;
+  color: var(--color-ink-soft, #6e5a43);
+  font-family: var(--font-naskh, serif);
+  font-size: 15px;
+  line-height: 2;
+}
+
+/* Bottom */
+
+.history-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-foxing, #c4a676);
+}
+
+.history-reading-time {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--color-ink-soft, #6e5a43);
+  font-family: var(--font-naskh, serif);
+  font-size: 13px;
+}
+
+.history-clock {
+  font-size: 18px;
+}
+
+.history-read-more {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-rubric, #a5361f);
+  font-family: var(--font-engraved-sc, Georgia, serif);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  transition: gap 0.25s ease;
+}
+
+.history-card:hover .history-read-more {
+  gap: 14px;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .history-page {
+    padding: 60px 16px;
+  }
+
+  .history-header {
+    margin-bottom: 40px;
+  }
+
+  .history-card-frame {
+    min-height: 320px;
+    padding: 18px;
+  }
+
+  .history-card-bottom {
+    flex-wrap: wrap;
+  }
+}

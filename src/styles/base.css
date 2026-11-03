@@ -1,0 +1,47 @@
+@import 'tailwindcss';
+@import './tokens.css';
+
+/* =========================================
+   BASE — shared root / initial styles
+   Imported once, before article.css & atlas.css
+========================================= */
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper) url('/textures/parchment.webp');
+  color: var(--color-ink);
+  font-family: var(--font-engraved);
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* RTL → naskh, LTR → engraved */
+:root[dir='rtl'] body {
+  font-family: var(--font-naskh);
+}
+
+/* Letter-spacing breaks Arabic-script joining */
+:root[dir='rtl'] * {
+  letter-spacing: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-rubric);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

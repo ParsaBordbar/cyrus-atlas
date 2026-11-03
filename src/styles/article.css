@@ -1,0 +1,619 @@
+/* =========================================
+   ARTICLE PAGE — atlas look
+   Uses tokens.css colours/fonts.
+   Root, body, base font, focus & motion → base.css
+========================================= */
+
+.article-page {
+  --article-display: var(--font-engraved-sc);
+  --article-leading: 1.7;
+  --article-rule: rgb(59 43 28 / 0.45);
+  --article-tint: rgb(236 223 191 / 0.55);
+
+  min-height: 100vh;
+  padding: clamp(8px, 2.5vw, 28px);
+  color: var(--color-ink);
+}
+
+:root[dir='rtl'] .article-page {
+  --article-display: var(--font-naskh);
+  --article-leading: 2.05;
+}
+
+/* Framed sheet, like the atlas neatline */
+.article-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(28px, 6vw, 72px) clamp(16px, 5vw, 64px);
+  border: 1px solid var(--color-ink);
+  background: rgb(243 233 207 / 0.6);
+  box-shadow:
+    inset 0 0 0 3px var(--color-paper-light),
+    inset 0 0 0 4px var(--color-ink);
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.article-header {
+  max-width: 850px;
+  margin: 0 auto clamp(28px, 5vw, 48px);
+  padding-bottom: clamp(24px, 4vw, 36px);
+  border-bottom: 3px double var(--color-ink);
+  text-align: center;
+}
+
+.article-category {
+  display: inline-block;
+  margin-bottom: 22px;
+  padding: 6px 16px;
+  border: 1px solid var(--color-rubric);
+  color: var(--color-rubric);
+  font-family: var(--article-display);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+}
+
+.article-header h1 {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 50px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+}
+
+:root[dir='rtl'] .article-header h1 {
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.article-subtitle {
+  margin: 16px 0 0;
+  color: var(--color-ink-soft);
+  font-size: clamp(15px, 2vw, 18px);
+  font-style: italic;
+  line-height: 1.6;
+  text-wrap: balance;
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 24px;
+  margin-top: 20px;
+  color: var(--color-ink-soft);
+  font-size: 14px;
+  font-style: italic;
+}
+
+:root[dir='rtl'] .article-subtitle,
+:root[dir='rtl'] .article-meta,
+:root[dir='rtl'] .article-image figcaption,
+:root[dir='rtl'] .article-section h3,
+:root[dir='rtl'] .article-sources p {
+  font-style: normal;
+}
+
+.article-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* =========================================
+   IMAGES
+========================================= */
+
+.article-image {
+  margin: clamp(24px, 4vw, 40px) 0;
+}
+
+.article-image img {
+  display: block;
+  width: 100%;
+  max-height: 540px;
+  object-fit: cover;
+  border: 1px solid var(--color-ink);
+  box-shadow:
+    0 0 0 3px var(--color-paper-light),
+    0 0 0 4px var(--color-ink);
+  filter: sepia(0.2);
+  transition: filter 0.3s var(--ease-ink);
+}
+
+.article-image img:hover {
+  filter: none;
+}
+
+/* maps and portrait images: never crop */
+.article-image--contain img {
+  max-height: 560px;
+  object-fit: contain;
+  background: rgb(236 223 191 / 0.5);
+  filter: none;
+}
+
+.article-image figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 16px;
+  padding: 16px 4px 0;
+  color: var(--color-ink-soft);
+  font-size: 14px;
+  font-style: italic;
+}
+
+.image-source a {
+  color: var(--color-rubric);
+  text-decoration: none;
+}
+
+.image-source a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   LAYOUT
+========================================= */
+
+.article-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+  margin-top: clamp(32px, 5vw, 56px);
+}
+
+/* =========================================
+   TABLE OF CONTENTS
+========================================= */
+
+.article-sidebar {
+  position: sticky;
+  top: 24px;
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+}
+
+.article-toc {
+  padding: 22px 22px 18px;
+  border: 1px solid var(--color-ink);
+  background: var(--color-paper-light);
+  box-shadow:
+    inset 0 0 0 3px var(--color-paper-light),
+    inset 0 0 0 4px var(--color-ink);
+}
+
+.article-toc h2 {
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted var(--article-rule);
+  font-family: var(--article-display);
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+:root[dir='rtl'] .article-toc h2 {
+  font-weight: 700;
+}
+
+.article-toc ol {
+  margin: 0;
+  padding-inline-start: 22px;
+}
+
+.article-toc li {
+  margin-bottom: 10px;
+  color: var(--color-ink-soft);
+}
+
+.article-toc li::marker {
+  color: var(--color-rubric);
+}
+
+.article-toc a {
+  color: var(--color-ink);
+  font-size: 15px;
+  line-height: 1.6;
+  text-decoration: none;
+  transition: color 0.2s var(--ease-ink), padding 0.2s var(--ease-ink);
+}
+
+.article-toc a:hover {
+  padding-inline-start: 4px;
+  color: var(--color-rubric);
+}
+
+/* =========================================
+   BODY
+========================================= */
+
+.article-body {
+  min-width: 0;
+  font-size: 17px;
+  line-height: var(--article-leading);
+}
+
+.article-body p {
+  margin: 0 0 20px;
+  text-wrap: pretty;
+}
+
+.article-intro {
+  font-size: clamp(18px, 2.4vw, 21px);
+  font-style: italic;
+  line-height: calc(var(--article-leading) - 0.1);
+}
+
+:root[dir='rtl'] .article-intro {
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.article-section {
+  margin-top: 44px;
+  padding-top: 8px;
+  scroll-margin-top: 24px;
+}
+
+.article-section h2,
+.article-conclusion h2,
+.article-sources h2 {
+  margin: 0 0 20px;
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 400;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+:root[dir='rtl'] .article-section h2,
+:root[dir='rtl'] .article-conclusion h2,
+:root[dir='rtl'] .article-sources h2 {
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.article-section h2 {
+  padding-bottom: 10px;
+  border-bottom: 1px dotted var(--article-rule);
+}
+
+/* diamond marker, like the active tick on the timeline scale */
+.article-section h2::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-inline-end: 14px;
+  background: var(--color-rubric);
+  rotate: 45deg;
+  vertical-align: middle;
+}
+
+.article-section h3 {
+  margin: 28px 0 10px;
+  color: var(--color-gold);
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+:root[dir='rtl'] .article-section h3 {
+  font-weight: 700;
+}
+
+.article-section ul {
+  margin: 0 0 24px;
+  padding-inline-start: 24px;
+}
+
+.article-section li {
+  margin-bottom: 8px;
+}
+
+.article-section li::marker {
+  color: var(--color-rubric);
+}
+
+.article-section strong {
+  color: var(--color-rubric);
+  font-weight: 400;
+}
+
+:root[dir='rtl'] .article-section strong {
+  font-weight: 700;
+}
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.timeline {
+  margin: 32px 12px;
+  border-inline-start: 2px solid var(--color-foxing);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  padding: 0 24px 26px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: -7px;
+  top: 0.65em;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-rubric);
+  box-shadow: 0 0 0 4px var(--color-paper-light);
+}
+
+.timeline-item strong {
+  flex: none;
+  min-width: 96px;
+  font-family: var(--article-display);
+}
+
+/* =========================================
+   TABLES
+========================================= */
+
+.table-wrapper {
+  margin: 28px 0;
+  overflow-x: auto;
+  border: 1px solid var(--color-ink);
+  background: var(--color-paper-light);
+  box-shadow: 0 0 0 3px var(--color-paper-light), 0 0 0 4px var(--color-ink);
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-body table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  text-align: start;
+}
+
+.article-body th,
+.article-body td {
+  padding: 14px 16px;
+  border-bottom: 1px dotted var(--article-rule);
+  text-align: start;
+}
+
+.article-body th {
+  background: var(--article-tint);
+  border-bottom: 1px solid var(--color-ink);
+  font-family: var(--article-display);
+  font-weight: 400;
+}
+
+:root[dir='rtl'] .article-body th {
+  font-weight: 700;
+}
+
+.article-body td {
+  color: var(--color-ink-soft);
+}
+
+.article-body tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================================
+   CONCLUSION
+========================================= */
+
+.article-conclusion {
+  margin-top: 56px;
+  padding: clamp(20px, 4vw, 36px);
+  border: 1px solid var(--color-ink);
+  background: var(--article-tint);
+  box-shadow:
+    inset 0 0 0 3px var(--color-paper-light),
+    inset 0 0 0 4px var(--color-ink);
+}
+
+.article-conclusion h2 {
+  margin-bottom: 16px;
+  color: var(--color-rubric);
+}
+
+.article-conclusion p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   SOURCES
+========================================= */
+
+.article-sources {
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 3px double var(--color-ink);
+}
+
+.article-sources ol {
+  margin: 0;
+  padding-inline-start: 24px;
+}
+
+.article-sources li {
+  margin-bottom: 20px;
+}
+
+.article-sources li::marker {
+  color: var(--color-rubric);
+}
+
+.article-sources a {
+  color: var(--color-rubric);
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.article-sources a:hover {
+  text-decoration: underline;
+}
+
+.article-sources p {
+  margin: 4px 0 0;
+  color: var(--color-ink-soft);
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* =========================================
+   NOT FOUND
+========================================= */
+
+.not-found {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: var(--color-ink);
+  text-align: center;
+}
+
+.not-found > span {
+  color: var(--color-rubric);
+  font-family: var(--font-engraved-sc);
+  font-size: clamp(72px, 16vw, 110px);
+  line-height: 1.2;
+}
+
+.not-found h1 {
+  margin: 16px 0 8px;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.not-found p {
+  color: var(--color-ink-soft);
+}
+
+.not-found a {
+  margin-top: 20px;
+  padding: 10px 24px;
+  border: 1px solid var(--color-rubric);
+  color: var(--color-rubric);
+  text-decoration: none;
+}
+
+.not-found a:hover {
+  background: var(--color-rubric);
+  color: var(--color-paper-light);
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 899px) {
+  .article-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .article-sidebar {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .article-toc ol {
+    columns: 2;
+    column-gap: 32px;
+  }
+
+  .article-toc li {
+    break-inside: avoid;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+  .article-body {
+    font-size: 16px;
+  }
+
+  .article-toc {
+    padding: 18px;
+  }
+
+  .article-toc ol {
+    columns: 1;
+  }
+
+  .article-image img {
+    max-height: 300px;
+  }
+
+  .article-image figcaption {
+    flex-direction: column;
+  }
+
+  .article-section {
+    margin-top: 36px;
+  }
+
+  .article-section h3 {
+    font-size: 17px;
+  }
+
+  .timeline {
+    margin-inline: 6px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    gap: 2px;
+    padding-inline: 18px;
+  }
+
+  .timeline-item strong {
+    min-width: 0;
+  }
+
+  .article-body table {
+    min-width: 460px;
+  }
+
+  .article-body th,
+  .article-body td {
+    padding: 10px 12px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.article-page a:focus-visible {
+  outline-offset: 4px;
+}
