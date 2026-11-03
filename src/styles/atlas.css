@@ -9,7 +9,7 @@ body,
 
 body {
   margin: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   background: var(--color-paper) url('/textures/parchment.webp');
   color: var(--color-ink);
   font-family: var(--font-engraved);
@@ -30,6 +30,7 @@ body {
   position: fixed;
   inset: 0;
   padding: var(--frame);
+  top: calc(var(--frame) + 80px);
 }
 
 .neatline {
@@ -357,7 +358,6 @@ body {
   background: var(--color-paper-light);
 }
 
-.lang,
 .controls {
   flex-direction: column;
 }
