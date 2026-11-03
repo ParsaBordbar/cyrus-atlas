@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 import { Menu, X } from "lucide-react";
 import { useAtlasState } from "../app/useAtlasState";
 import { LanguageToggle } from "./LanguageToggle";
@@ -18,9 +19,9 @@ export default function Header() {
 
       <div className="mx-auto max-w-10/12">
         <div className="flex min-h-20 items-center justify-between gap-8">
-          <a href="/" className="group flex items-center gap-3">
+          <Link to="/" className="group flex items-center gap-3">
             <div className="flex h-12 w-12 items-center justify-center border border-gold text-rubric transition-transform duration-300 group-hover:rotate-[-5deg]">
-              <img src="/icons/cyrus.svg" alt={t.header.logoAlt} />
+              <img src={`${import.meta.env.BASE_URL}icons/cyrus.svg`} alt={t.header.logoAlt} />
             </div>
 
             <div>
@@ -32,18 +33,18 @@ export default function Header() {
                 {t.header.tagline}
               </p>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden items-center gap-7 lg:flex">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.href}
-                href={item.href}
+                to={item.href}
                 className="relative py-2 font-engraved text-[15px] text-ink-soft transition-colors duration-300 hover:text-rubric after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-rubric after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <LanguageToggle lang={lang} onChange={setLang} />
           </nav>
@@ -63,14 +64,14 @@ export default function Header() {
         {menuOpen && (
           <nav className="border-t border-foxing py-4 lg:hidden">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.href}
-                href={item.href}
+                to={item.href}
                 onClick={() => setMenuOpen(false)}
                 className="block first:border-b border-foxing/40 py-3 font-engraved text-base text-ink-soft transition-colors hover:text-rubric"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
         )}
