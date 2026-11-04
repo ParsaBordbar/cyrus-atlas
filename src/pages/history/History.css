@@ -3,7 +3,7 @@
   padding: 120px 24px;
   background: var(--color-paper, #ecdfbf);
   color: var(--color-ink, #3b2b1c);
-  font-family: var(--font-engraved, Georgia, serif);
+  font-family: var(--font-naskh, Georgia, serif);
 }
 
 .history-container {
@@ -23,7 +23,6 @@
   display: inline-block;
   margin-bottom: 20px;
   color: var(--color-rubric, #a5361f);
-  font-family: var(--font-engraved-sc, Georgia, serif);
   font-size: 11px;
   letter-spacing: 0.2em;
 }
@@ -40,7 +39,6 @@
   max-width: 570px;
   margin: 20px auto 0;
   color: var(--color-ink-soft, #6e5a43);
-  font-family: var(--font-naskh, serif);
   font-size: 17px;
   line-height: 2;
 }
@@ -119,7 +117,6 @@
 
 .history-card-number {
   color: var(--color-rubric, #a5361f);
-  font-family: var(--font-engraved-sc, Georgia, serif);
   font-size: 13px;
   letter-spacing: 0.12em;
 }
@@ -128,7 +125,6 @@
   padding: 6px 12px;
   color: var(--color-rubric, #a5361f);
   border: 1px solid var(--color-rubric, #a5361f);
-  font-family: var(--font-naskh, serif);
   font-size: 12px;
 }
 
@@ -145,7 +141,6 @@
 .history-card-overline {
   margin-bottom: 15px;
   color: var(--color-gold, #9c6b1e);
-  font-family: var(--font-engraved-sc, Georgia, serif);
   font-size: 10px;
   letter-spacing: 0.2em;
 }
@@ -153,7 +148,6 @@
 .history-card-title {
   margin: 0;
   color: var(--color-ink, #3b2b1c);
-  font-family: var(--font-engraved, Georgia, serif);
   font-size: clamp(30px, 4vw, 38px);
   font-weight: 500;
   line-height: 1.25;
@@ -162,7 +156,6 @@
 .history-card-subtitle {
   margin: 16px 0 0;
   color: var(--color-ink-soft, #6e5a43);
-  font-family: var(--font-naskh, serif);
   font-size: 15px;
   line-height: 2;
 }
