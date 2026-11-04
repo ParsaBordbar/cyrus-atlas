@@ -249,7 +249,7 @@ export const fa: Dict = {
     heroAlt: "آرامگاه کوروش بزرگ در پاسارگاد",
     heroCaption: "آرامگاه کوروش بزرگ در پاسارگاد",
     sourceLabel: "منبع",
-    imageSource: "ویکی‌انبار",
+    imageSource: "ویکی مدیا",
     images: {
       politics: {
         alt: "نقشه‌ی پادشاهی‌های ماد، لیدیه، بابل و مصر در حدود ۶۰۰ پیش از میلاد",
