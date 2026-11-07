@@ -57,6 +57,7 @@ The experience is available in both **English and Persian**, including full righ
 - **Persian RTL Support:** Native right-to-left layout and Persian content.
 - **Historical Sources:** Explore the distinction between contemporary cuneiform evidence and later Greek and Roman accounts.
 - **Historical Gallery:** Discover artifacts, relics, and portraits with image credits and licensing information.
+- **Interactive 3D Models:** Inspect the tomb of Cyrus at Pasargadae and the Cyrus Cylinder from any angle, in the browser.
 - **Persian Literature:** Explore selected verses from Ferdowsi's Shahnameh with historical context.
 
 ## Technology Stack
@@ -180,6 +181,7 @@ cyrus-atlas/
 - `places.ts`: Historical towns and map labels.
 - `sources.ts`: Historical references and source classifications.
 - `gallery.ts`: Artifacts, portraits, image credits, and licenses.
+- `models.ts`: 3D model metadata, authors, and licences.
 - `shahnameh.ts`: Selected verses from Ferdowsi's Shahnameh.
 - `i18n/en.ts`: English interface and narrative content.
 - `i18n/fa.ts`: Persian interface and narrative content.
@@ -207,6 +209,12 @@ Images are sourced from Wikimedia Commons under various licenses, including:
 - Public Domain
 
 Individual image authorship and licensing information is displayed in the corresponding image viewer.
+
+3D models on the `/models` page are sourced from Sketchfab and reused under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — “The tomb of Cyrus at Pasargadae” by Pooya_dh and “The Cyrus Cylinder” by artfletch, with credit shown beside each viewer. The GLB files in `public/models/` are optimised with [gltfpack](https://github.com/zeux/meshoptimizer) (meshopt compression); to re-optimise after replacing a source file:
+
+```bash
+npx gltfpack -i <input>.glb -o public/models/<name>.glb -cc
+```
 
 ## Contributing
 
