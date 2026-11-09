@@ -12,6 +12,7 @@ export default function Header() {
   const navigation = [
     { label: t.header.navigation.home, href: "/" },
     { label: t.header.navigation.history, href: "/history" },
+    { label: t.header.navigation.models, href: "/models" },
   ];
 
   return (

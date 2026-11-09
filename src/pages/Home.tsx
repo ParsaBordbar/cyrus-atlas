@@ -58,7 +58,7 @@ export default function Home() {
 
         <Timeline t={t} index={s.index} onSelect={s.setIndex} />
 
-        <p className="credit" dir="ltr">Coastlines and rivers: Natural Earth. Images: Wikimedia Commons</p>
+        <p className="credit" dir="ltr">Coastlines and rivers: Natural Earth. Images: Wikimedia Commons. 3D models: Sketchfab (CC BY)</p>
       </main>
 
       <PictureModal id={picture} t={t} onClose={() => setPicture(null)} />

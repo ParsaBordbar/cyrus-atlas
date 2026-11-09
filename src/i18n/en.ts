@@ -1,5 +1,6 @@
 import type { EventId } from "../data/events";
 import type { PictureId } from "../data/gallery";
+import type { ModelId } from "../data/models";
 import type { PlaceId, RegionId } from "../data/places";
 import type { VerseId } from "../data/shahnameh";
 import type { SourceId, SourceKind } from "../data/sources";
@@ -118,6 +119,15 @@ export type Dict = {
     PictureId,
     { title: string; caption: string; treatment?: string }
   >;
+  models: Record<ModelId, { title: string; caption: string }>;
+  modelsPage: {
+    title: string;
+    description: string;
+    loading: string;
+    error: string;
+    sourceLabel: string;
+    rotateHint: string;
+  };
   verses: Record<VerseId, { context: string; lines?: [string, string][] }>;
   article: ArticleDict;
   header: {
@@ -128,6 +138,7 @@ export type Dict = {
     navigation: {
       home: string;
       history: string;
+      models: string;
     };
   };
   history: {
@@ -355,6 +366,27 @@ export const en: Dict = {
       caption:
         "Folio from an illustrated Shahnameh made in Ilkhanid Iran around 1300. Metropolitan Museum of Art.",
     },
+  },
+  models: {
+    cyrusTomb: {
+      title: "The tomb of Cyrus at Pasargadae",
+      caption:
+        "A gabled limestone chamber on six stepped tiers, built at Pasargadae, the capital Cyrus founded in Pars. A photogrammetric 3D survey of the monument as it stands today.",
+    },
+    cyrusCylinder: {
+      title: "The Cyrus Cylinder",
+      caption:
+        "Baked clay cylinder of about 23 cm, inscribed in Babylonian cuneiform after Cyrus took Babylon in 539 BCE and buried in the city walls. This is a photogrammetric 3D scan of the object in the British Museum.",
+    },
+  },
+  modelsPage: {
+    title: "3D Models",
+    description:
+      "Handle two monuments of Cyrus’s reign in three dimensions: his tomb at Pasargadae and the Cyrus Cylinder from Babylon.",
+    loading: "Loading the model…",
+    error: "The model could not be loaded.",
+    sourceLabel: "3D model",
+    rotateHint: "Drag to rotate · Scroll to zoom",
   },
   verses: {
     shepherds: {
@@ -615,6 +647,7 @@ export const en: Dict = {
     navigation: {
       home: "Home",
       history: "History",
+      models: "3D Models",
     },
   },
   history: {

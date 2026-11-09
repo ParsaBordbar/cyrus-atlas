@@ -7,6 +7,7 @@ import '../styles/atlas.css';
 import '../styles/article.css';
 import Header from '../components/Header';
 import History from '../pages/history/History';
+import Models from '../pages/Models';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/history" element={<History />} />
+        <Route path="/models" element={<Models />} />
 
         <Route
           path="/history/cyrus-era"
